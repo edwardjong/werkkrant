@@ -1,0 +1,318 @@
+article
+{
+    padding:5px;
+    border:dotted 3px #ff006e;
+    margin-top:5px;
+}
+
+header
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="template.css">
+</head>
+ 
+<body>
+<!--  
+</div>
+<div id="logo-left"><img src="Images/logo-uwv.png">
+</div>
+
+</div>
+<div id="logo-right"><img src="Images/logo-werkgevers-servicepunt.png">
+</div>
+
+--> 
+
+
+
+<style>
+div {
+    background-color: white;
+    border: 1px solid lightblue;
+    padding: 10px;
+    
+    width: 964px; 
+    float: left;
+        position: relative;
+    left: 150px;
+    
+    text-align: center;
+    
+}
+
+
+</style>
+</head>
+<body>
+
+
+      /*====This is the banners====*/   
+div {
+    background-color: white;
+    border: 1px solid lightblue;
+    padding: 10px;
+    
+    width: 964px; 
+    float: left;
+        position: relative;
+    left: 150px;
+    
+    text-align: center;
+    
+}
+#logo-left {     background-color: white;
+	height: 100px;
+    border: 1px solid white;
+    padding: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    width: 300px;
+    float: left; }
+#logo-right {     background-color: white;
+	height: 100px;
+    border: 1px solid white;
+    padding: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    width: 300px;
+    float: right; }
+#search-bar {     background-color: green;
+	height: 100px;
+    border: 1px solid white;
+    padding: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    width: 300px; 
+    float: center;
+ }
+           
+ /*====This is the search button====*/   
+#search {
+
+}
+
+#search input[type="text"] {
+    background: url(Images/search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    }
+
+#search input[type="text"]:focus {
+    width: 200px;
+    }
+    
+#logo-left {
+    max-width: 300px;
+    height: 75px;
+    border: 1px solid white;
+    float: left;
+
+    margin: 0px;
+    
+    position: relative;
+    left: 0px;
+}
+
+#logo-middle {
+    max-width: 300px;
+    height: 75px;
+    border: 1px solid white;
+    margin: 0px;
+    float: left;
+        position: relative;
+    left: 0px;
+}
+
+#logo-right {
+    max-width: 300px;
+    height: 75px;
+    border: 1px solid white;
+    float: left;
+    position: relative;
+    left: 0px;
+    margin: 0px;
+}
+
+#search-banner {
+	    background-color: #006aca;
+    max-width: 943px;
+    height: 25px;
+    border: 1px solid #006aca;
+    margin: 0px;
+        float: left;
+        position: relative;
+    left: 0px;
+    clear: both;
+} 
+#navigation-banner {
+	    background-color: #D6EFFF;
+    max-width: 943px;
+    height: 20px;
+    border: 1px solid #D6EFFF;
+    margin: 0px;
+        float: left;
+        position: relative;
+    left: 0px;
+    clear: both;
+} 
+
+#topmost-banner {
+	    background-color: #D6EFFF;
+    max-width: 943px;
+    height: 5px;
+    border: 1px solid #D6EFFF;
+    margin: 0px;
+        float: left;
+        position: relative;
+    left: 0px;
+    clear: both;
+} 
+
+#header {
+	    background-color: #D6EFFF;
+    max-width: 1000px;
+    border: 1px solid white;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+#main-content {
+	    background-color: white;
+    max-width: 1000px;
+
+    border: 1px white;
+    margin: 0px;
+	padding: 0px;
+	float: left;
+	text-align: left;
+} 
+#holder1 {
+	background-color: lightgrey;
+    max-width: 250px;
+    height: 290px;
+    border: 1px black;
+    margin: 0px;
+    float: left;
+    position: relative;
+    left: 95px;
+    top: 20px;
+  <!-- clear: both;-->
+  float: left;
+} 
+
+#holder2 {
+	background-color: lightgrey;
+    max-width: 250px;
+    height: 290px;
+    border: 1px black;
+    margin: 0px;
+    float: left;
+    position: relative;
+    left: 125px;
+    top: 20px;
+  float: left;
+} 
+
+.title {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    width: 100%;
+    background: url(images/ui/heading-border.png) repeat-x bottom left;
+}
+
+#footer {
+	    background-color: #D6EFFF;
+    max-width: 1000px;
+    border: 1px solid #D6EFFF;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+span
+{
+    font-size:20px;
+    color: black;
+    font-weight: bold;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+
+}
+span a
+{
+    font-size:20px;
+    color: grey;
+
+
+}
+span b
+{
+    font-size:13px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+
+}
+
+#rcorners {
+    border-radius: 25px;
+    border: 2px solid grey;
+    padding: 20px; 
+    max-width: 200px;
+    height: 150px; 
+    margin: 20px;
+    float: left;
+    position: relative;
+    left: 30px;
+
+        background: url(Images/woman-at-computer-desk2.jpg);
+
+}  <div id="green"><img src="Images/logo-uwv.png"></div>
+        <div id="red"><img src="Images/logo-werkgevers-servicepunt.png"></div>
+        <div id="black"><img src="Images/logo-aanbodkrant.png"></div>
+        <div id="search-banner"><form method="get" action="/search" id="search">
+  <input name="q" type="text" size="40" placeholder="Search..." />
+</form></div>
+        <div id="navigation-banner">
+        
+<!--  <div><form method="get" action="/search" id="search">
+  <input name="q" type="text" size="40" placeholder="Search..." />
+</form>
+</div>-->
+
+        
+
+</body>
+</html>
+
+
+
+
+
+<!--  <div id="two"></div> 
+<div id="three"></div> 
+
+<div id="one">Put pictures and stuff here too</div> -->
+
+
+</body>
+
+
+</html>
+

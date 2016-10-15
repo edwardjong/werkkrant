@@ -1,0 +1,251 @@
+@CHARSET "ISO-8859-1";
+/*====This is the header====*/   
+div {
+    background-color: white;
+    width: 100%; 
+    float: left;
+       position: relative;
+
+    
+    
+    text-align: center;
+    
+}
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: grey;
+	text-align: center;
+	line-height: 70%;
+	    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.header {
+	background-color: white;
+	width: 100%;
+    clear: both;
+}
+
+.topmost {
+	background-color: #D6EFFF; 
+	height: 50px;
+} 
+
+.search {
+	background-color: #006aca;
+    height: 75px;
+} 
+
+.logo {
+	width: 50%;
+	background-color: white;
+    height: 100px;	
+  	left: 50%;
+  	margin-left: -25%;
+}
+
+.spacing_line_thin {
+	width: 100%;
+	background-color: white;
+    height: 15px;	
+}
+    
+.spacing_line_thick {
+	width: 100%;
+	background-color: white;
+    height: 50px;	
+}   
+
+#login {
+	border-radius: 10px;
+    border: 2px solid #C5D937;
+    background-color: #C5D937;
+    width: 300px;
+    height: 71px; 
+    position: absolute;
+    left: 60%;
+    top: 0%;
+} 
+ /*====Start search button====*/   
+#search {
+
+}
+
+#search input[type="text"] {
+    background: url(Images/search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    position: absolute;
+    left: 25%;
+    bottom: 22%;
+
+
+    }
+
+#search input[type="text"]:focus {
+    width: 200px;
+    }
+    
+ /*====End search button====*/   
+
+
+
+#main-content-text {
+	background-color: white;
+    width: 100%;
+    border: 1px white;
+    margin: 0px;
+	padding: 0px;
+	float: left;
+	text-align: center;
+	            border-bottom: 20px solid white;
+	                clear: both;
+
+} 
+#main-content-candidates {
+	    background-color: white;
+    max-width: 50%;
+    border: 1px white;
+    margin: 0px;
+	padding: 0px;
+	float: left;
+	text-align: left;
+	    clear: both;
+	      	left: 50%;
+  	margin-left: -25%;
+}
+
+
+.title {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    width: 100%;
+    background: url(images/ui/heading-border.png) repeat-x bottom left;
+}
+
+#footer {
+	    background-color: #D6EFFF;
+
+}
+
+span
+{
+    font-size:50px;
+    color: black;
+    font-weight: bold;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+
+}
+span a
+{
+    font-size:50px;
+    color: grey;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+span b
+{
+    font-size:22px;
+    color: black;
+    font-family: "Proxima", Verdana, Geneva, sans-serif;
+	font-weight: normal;
+}
+span c
+{
+    font-size:12px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+span d
+{
+    font-size:10px;
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+span e
+{
+    font-size:16px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+span f
+{
+    font-size:16px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+
+.image-holder {
+
+    border-top-right-radius: 25px 25px;
+    border-top-left-radius: 25px 25px;
+
+
+    padding: 20px;   
+    max-width: 300px;
+    height: 175px; 
+    margin: 0px;
+    float: left;
+    position: relative;
+    left: 0px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.position-img {
+    position: relative;
+    overflow: hidden;
+        overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: center;
+    background-size: cover;
+    padding: 0%;
+}
+
+.candidate-info-holder {
+    border-bottom-right-radius: 25px 25px;
+    border-bottom-left-radius: 25px 25px;
+    border-top-right-radius: 35px 35px;
+    border-top-left-radius: 35px 35px;
+    	    background-color: #006aca;
+
+    padding: 0px;   
+    max-width: 300px;
+    height: 225px; 
+    margin: 5px;
+    float: left;
+
+}
+.last
+{
+	clear: right;
+    margin-right: 0!important;	
+}
