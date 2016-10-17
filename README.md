@@ -1,2 +1,0 @@
-# werkkrant
-Project Java Developer
