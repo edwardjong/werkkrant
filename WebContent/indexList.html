@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="loadDoc()">
+
+
+
+
+<p id="main-content-candidates"></p>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var json = JSON.parse(this.responseText)
+      var text = ""
+      for (var i = 0; i < json.length; i++) {
+  		text += "<div class=\"candidate-info-holder\">"	 
+  		text += "<div class=\"image-holder position-img\">"	 				 
+  			text +=		"<a href=\"person_details.html\">"
+  	//			text += "	<img src=" + json[i].plaatje + "alt=\"Foto-kandidaat\" style=\"border:0;\">" 
+  			
+
+  			   
+        	text += "<p>" + "<img src=\""  +  json[i].plaatje + "\"></p>" 
+  					text += "	</a>"			
+  						text += "</div>"	
+  							text += "<h3><span><e>" + json[i].firstName + "  " + json[i].lastName + "</e></span></h3>"
+  								text += "<h3><span><f>"+ json[i].skills + " </f></span></h3>"	
+  									text += "</div>"		
+		
+    //   text += "<p>" + json[i].firstName + " " + json[i].lastName + json[i].plaatje + json[i].skills + "</p>" 
+      }
+      document.getElementById("main-content-candidates").innerHTML = text
+    }
+  };
+  xhttp.open("GET", "/OnlineWerkkrant/rest/aanbod/person", true);
+  xhttp.send();
+}
+</script>
+
+
+</body>
+</html>

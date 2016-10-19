@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="template2.css">
+</head> 
+<body></body>
+<style>
+</style>
+</head>
+<body onload="loadDoc()">
+
+	<div class="header">
+		<div class="header topmost"></div>
+		<div class="header spacing_line_thin"></div>
+		<div class="header logo">
+			<img src="Images/logo-uwv.png" align="left">
+			<img src="Images/logo-werkgevers-servicepunt4.png" align="middle">
+			<img src="Images/logo-aanbodkrant.png" align="right">
+		</div> 	
+		<div class="header search">
+			<form method="get" action="/search" id="search"><input name="q" type="text" size="40" placeholder="Zoeken in de Aanbodkrant..." /></form>
+			<div id="login"><p></p><h3>Voor werkzoekenden...</h3><p></p><img src="Images/inloggen.png" align="middle"></div>	
+		</div> 
+	</div> 
+	<div class="header spacing_line_thick"></div>	
+	<div id="main-content-text">
+		<span>Ontmoet<a> Onze ICT Professionals</a></span>
+		<p><span><b>Van Frontend Developer tot Senior Network Engineer. Nodig ze uit op gesprek!</b></span></p>
+	</div>   	
+     
+	<div id="main-content-candidates">
+	<script>
+		function loadDoc() 
+		{
+  			var xhttp = new XMLHttpRequest();
+  			xhttp.onreadystatechange = function() 
+  			{
+    			if (this.readyState == 4 && this.status == 200) 
+    			{
+					var json = JSON.parse(this.responseText)
+      				var text = ""
+      				for (var i = 0; i < json.length; i++) 
+        				{
+  							text += "<div class=\"candidate-info-holder\">"	 
+  							text += "<div class=\"image-holder position-img\">"	 				 
+  							text +=	"<a href=\"person_details.html\">"
+ //							text += "<img src=" + json[i].plaatje + "alt=\"Foto-kandidaat\" style=\"border:0;\">" 
+ 	       					text += "<img src=\""  +  json[i].plaatje + "\">" 
+  							text += "</a>"			
+  							text += "</div>"	
+  							text += "<h3><span><e>" + json[i].firstName + "  " + json[i].lastName + "</e></span></h3>"
+  							text += "<h3><span><f>"+ json[i].skills + " </f></span></h3>"	
+  							text += "</div>"		
+         				}
+      				document.getElementById("main-content-candidates").innerHTML = text
+    			}
+  			};
+  			xhttp.open("GET", "/werkkrant/rest/aanbod/person", true);
+  			xhttp.send();
+		}
+	</script>		
+	</div>  
+	
+	<div id="footer">
+		<span><c>Jaargang 4 Uitgave 15</c><d> donderdag 29 September, 2016</d></span>	
+		<span><c>Contact</c><d> rob.vanderknaap@uwv.nl  jerry.hendriks@uwv.nl</d></span>	
+	</div>
+</body>
+</html>
+
+
+
+
+
+</body>
+
+
+</html>
+
