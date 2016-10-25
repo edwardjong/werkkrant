@@ -5,12 +5,14 @@ import java.io.Serializable;
 public class RestJobAanbod implements Serializable
 {
 	private static final long serialVersionUID = 1L;
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String plaatje;
 	private String skills;
 
-	public RestJobAanbod(String aFirstName, String aLastName, String aPlaatje, String aSkills) {
+	public RestJobAanbod(int id, String aFirstName, String aLastName, String aPlaatje, String aSkills) {
+		setId(id);
 			setFirstName(aFirstName);
 			setLastName(aLastName);
 			setPlaatje(aPlaatje);
@@ -60,5 +62,15 @@ public class RestJobAanbod implements Serializable
 	public void setSkills(String skills)
 	{
 		this.skills = skills;
+	}
+
+	public int getId()
+	{
+		return id;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
 	}
 }

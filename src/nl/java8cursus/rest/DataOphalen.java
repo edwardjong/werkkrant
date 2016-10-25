@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -15,33 +16,49 @@ public class DataOphalen
 {
 
 	
-/*	@GET
-	@Path("/person/1")
-	@Produces(MediaType.APPLICATION_JSON)
-	public RestJobAanbod getPerson()
-	{
-		return new RestJobAanbod("Donald", "Duck");
-	} */
+
+	
 	@GET
 	@Path("/person")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<RestJobAanbod> getPersons()
 	{
-		List<RestJobAanbod> personList = new ArrayList<>();
-		personList.add(new RestJobAanbod("Theo",  "Pont", "Images/theo.png", "theo skills"));
-		personList.add(new RestJobAanbod("Marco", "Wenneker","Images/marco.png", "theo skills"));
-		personList.add(new RestJobAanbod("Tai", "Chun Lee","Images/tai.png", "theo skills"));
-		personList.add(new RestJobAanbod("Geert", "Janssen","Images/geert.png", "theo skills"));
-		personList.add(new RestJobAanbod("Joey", "Krijgsman","Images/joey.png", "theo skills"));
-		personList.add(new RestJobAanbod("Erik", "Bouts","Images/erik.png", "theo skills"));
-		personList.add(new RestJobAanbod("Ronald", "van den Berg","Images/ronald.png", "theo skills"));
-		personList.add(new RestJobAanbod("Yvonne", "Olij-Kenyon","Images/yvonne.png", "theo skills"));
-		personList.add(new RestJobAanbod("Edward", "Jong-A-Lock","Images/edward.png", "theo skills"));
-		personList.add(new RestJobAanbod("Peter", "Davidse","Images/peter.png", "theo skills"));
-		personList.add(new RestJobAanbod("Kees", "Roest","Images/kees.png", "theo skills"));
-				
+		List<RestJobAanbod> personList = getPersonList();				
 		return personList;
-
 	}
 
+	private List<RestJobAanbod> getPersonList()
+	{
+		List<RestJobAanbod> personList = new ArrayList<>();
+		personList.add(new RestJobAanbod(1, "Theo",  "Pont", "Images/theo.png", "theo skills"));
+		personList.add(new RestJobAanbod(2, "Marco", "Wenneker","Images/marco.png", "theo skills"));
+		personList.add(new RestJobAanbod(3, "Tai", "Chun Lee","Images/tai.png", "theo skills"));
+		personList.add(new RestJobAanbod(4,"Geert", "Janssen","Images/geert.png", "theo skills"));
+		personList.add(new RestJobAanbod(5,"Joey", "Krijgsman","Images/joey.png", "theo skills"));
+		personList.add(new RestJobAanbod(6,"Erik", "Bouts","Images/erik.png", "theo skills"));
+		personList.add(new RestJobAanbod(7,"Ronald", "van den Berg","Images/ronald.png", "theo skills"));
+		personList.add(new RestJobAanbod(8,"Yvonne", "Olij-Kenyon","Images/yvonne.png", "theo skills"));
+		personList.add(new RestJobAanbod(9, "Edward", "Jong-A-Lock","Images/edward.png", "theo skills"));
+		personList.add(new RestJobAanbod(10, "Peter", "Davidse","Images/peter.png", "theo skills"));
+		personList.add(new RestJobAanbod(11, "Kees", "Roest","Images/kees.png", "theo skills"));
+		return personList;
+	}
+	
+	@GET
+	@Path("/person/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public RestJobAanbod getOnePerson(@PathParam("id") int id)
+	{
+		List<RestJobAanbod> personList = getPersonList();
+//		for (RestJobAanbod onePerson : personList)
+//			{ 
+//				int newId = onePerson.getId();
+//				if(newId == id ) System.out.println("person with id " + id + " is requested from the server");
+//			}
+//		else {}
+		int idnr = id - 1;	
+		RestJobAanbod onePerson = personList.get(idnr);
+		System.out.println(onePerson.getId() +" " + onePerson.getFirstName());
+		return onePerson;
+	} 
 }
