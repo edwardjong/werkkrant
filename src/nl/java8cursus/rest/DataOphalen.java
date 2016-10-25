@@ -38,7 +38,8 @@ public class DataOphalen
 		personList.add(new RestJobAanbod("Yvonne", "Olij-Kenyon","Images/yvonne.png", "theo skills"));
 		personList.add(new RestJobAanbod("Edward", "Jong-A-Lock","Images/edward.png", "theo skills"));
 		personList.add(new RestJobAanbod("Peter", "Davidse","Images/peter.png", "theo skills"));
-		
+		personList.add(new RestJobAanbod("Kees", "Roest","Images/kees.png", "theo skills"));
+				
 		return personList;
 
 	}
