@@ -50,15 +50,14 @@ public class DataOphalen
 	public RestJobAanbod getOnePerson(@PathParam("id") int id)
 	{
 		List<RestJobAanbod> personList = getPersonList();
-//		for (RestJobAanbod onePerson : personList)
-//			{ 
-//				int newId = onePerson.getId();
-//				if(newId == id ) System.out.println("person with id " + id + " is requested from the server");
-//			}
-//		else {}
-		int idnr = id - 1;	
-		RestJobAanbod onePerson = personList.get(idnr);
-		System.out.println(onePerson.getId() +" " + onePerson.getFirstName());
-		return onePerson;
+		for (RestJobAanbod onePerson : personList)
+			{ 
+				if(onePerson.getId() == id) 
+					{
+						System.out.println("person with id " + id + " is requested from the server");
+						return onePerson;
+					}
+			}
+		return null;
 	} 
 }

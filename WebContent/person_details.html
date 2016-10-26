@@ -8,22 +8,33 @@
 </style>
 </head>
 <body>
-	<div class="header">
-		<div class="header topmost"></div>
-		<div class="header spacing_line_thin"></div>
-		<div class="header logo">
-			<img src="Images/logo-uwv.png" align="left">
-			<img src="Images/logo-werkgevers-servicepunt4.png" align="middle">
-			<img src="Images/logo-aanbodkrant.png" align="right">
-		</div> 	
-		<div class="header search">
-			<form method="get" action="/search" id="search"><input name="q" type="text" size="40" placeholder="Zoeken in de Aanbodkrant..." /></form>
-			<div id="login"><p></p><h3>Voor werkzoekenden...</h3><p></p><img src="Images/inloggen.png" align="middle"></div>	
-		</div> 
-	</div> 
-	<div class="header spacing_line_thick"></div>	
+	
+		<div id="main-content-individual">
+		<script>
+		function loadPerson(id) {
+  			var xhttp = new XMLHttpRequest();
+  			xhttp.onreadystatechange = function() 
+  			{
+    			if (this.readyState == 4 && this.status == 200) 
+    			{   
+					var json = JSON.parse(this.responseText)
+      				var text = ""
 
-	<div id="main-content-candidates">
+      		  			text += "<h3>"+ json.firstName +"</h3>"	
+	
+      				document.getElementById("main-content-individual").innerHTML = text
+    			}
+  			};
+  			xhttp.open("GET", "/werkkrant/rest/aanbod/person/"+id, true);
+  			xhttp.send();
+			
+		} 
+	</script>		
+	</div>  
+	
+	
+	
+	
 	
 		<table id="table-example-1">
  		  	<thead><tr><th colspan="3">Edward Jong-A-Lock</th> 
@@ -50,11 +61,7 @@
     </tr></tbody></table>
   </div>  
      
-	
-	<div id="footer">
-		<span><c>Jaargang 4 Uitgave 15</c><d> donderdag 29 September, 2016</d></span>	
-		<span><c>Contact</c><d> rob.vanderknaap@uwv.nl  jerry.hendriks@uwv.nl</d></span>	
-	</div>
+
 </body>
 </html>
 

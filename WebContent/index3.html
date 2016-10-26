@@ -30,66 +30,11 @@
 	</div>   	
      
 	<div id="main-content-candidates">
-	<script>
-		function loadDoc() 
-		{
-  			var xhttp = new XMLHttpRequest();
-  			xhttp.onreadystatechange = function() 
-  			{
-    			if (this.readyState == 4 && this.status == 200) 
-    			{
-					var json = JSON.parse(this.responseText)
-      				var text = ""
-      				for (var i = 0; i < json.length; i++) 
-        				{
-  							text += "<div class=\"candidate-info-holder\">"	 
-  								text += "<div class=\"image-holder position-img\">"	 				 
-  									text +=	"<a href=\"#\" onClick=\"loadPerson("+json[i].id+")\">"
- 	       								text += "<img src=\""  +  json[i].plaatje + "\">" 
-  									text += "</a>"			
-  								text += "</div>"	
-  								text += "<h3><span><e>" + json[i].firstName + "  " + json[i].lastName + "</e></span></h3>"
-  								text += "<h3><span><f>"+ json[i].skills + " </f></span></h3>"	
-  							text += "</div>"		
-         				}
-      				document.getElementById("main-content-candidates").innerHTML = text
-    			}
-  			};
-  			xhttp.open("GET", "/werkkrant/rest/aanbod/person", true);
-  			xhttp.send();
-		}
-
-		function loadPerson(id) {
-  			var xhttp = new XMLHttpRequest();
-  			xhttp.onreadystatechange = function() 
-  			{
-    			if (this.readyState == 4 && this.status == 200) 
-    			{   
-					var json = JSON.parse(this.responseText)
-      				var text = ""
-  			//		text += "<div class=\"candidate-info-holder\">"	 
-  			//		text += "<div class=\"image-holder position-img\">"	 				 
-  			//		text +=	"<a href=\"#\" onClick=\"loadPerson("+json[i].id+")}\">"
- 			//		text += "<img src=\""  +  json[i].plaatje + "\">" 
-  			//		text += "</a>"			
-  			//		text += "</div>"	
-  			//		text += "<h3><span><e>" + json[i].firstName + "  " + json[i].lastName + "</e></span></h3>"
-  					text += "<h3><span><f>"+ json[id].skills + " </f></span></h3>"	
-  			//		text += "</div>"		
-      				document.getElementById("main-content-candidates").innerHTML = text
-    			}
-  			};
-  			xhttp.open("GET", "/werkkrant/rest/aanbod/person/"+id, true);
-  			xhttp.send();
-
-			
-			
-		} 
-	</script>		
+    <script src = "mainContent.js"></script> 
 	</div>  
 	
 	<div id="footer">
-	//	<span><c>Jaargang 4 Uitgave 15</c><d> donderdag 29 September, 2016</d></span>	
+		<span><c>Jaargang 4 Uitgave 15</c><d> donderdag 29 September, 2016</d></span>	
 		<span><b>Contact</b><d> rob.vanderknaap@uwv.nl  jerry.hendriks@uwv.nl</d></span>	
 	</div>
 </body>

@@ -136,9 +136,22 @@ h3 {
 	text-align: left;
 	    clear: both;
 	      	left: 50%;
-  	margin-left: -23%;
+  	margin-left: -25%;
 }
 
+#main-content-individual {
+	    background-color: white;
+  //  max-width: 50%;
+    max-width: 930px;
+    border: 1px white;
+    margin: 0px;
+	padding: 0px;
+	float: left;
+	text-align: left;
+	    clear: both;
+	      	left: 50%;
+  	margin-left: -25%;
+}
 
 .title {
     position: relative;
