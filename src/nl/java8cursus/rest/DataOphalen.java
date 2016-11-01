@@ -1,6 +1,6 @@
 package nl.java8cursus.rest;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -9,7 +9,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
+//import javax.persistence.EntityManager;
 //import nl.luminis.javatraining.pojo.Person;
 
 @Path("/aanbod")

@@ -302,3 +302,8 @@ span f
 body {
   padding: 1rem;
 }
+
+
+#table-example-2  th, td {   
+    border: 1px solid black;
+}

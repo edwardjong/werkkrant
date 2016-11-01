@@ -7,8 +7,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-//import nl.luminis.javatraining.pojo.Person;
-
 @Stateless
 public class PersonDAO {
 

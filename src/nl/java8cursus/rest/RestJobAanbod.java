@@ -2,7 +2,6 @@ package nl.java8cursus.rest;
 
 import java.io.Serializable;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +18,7 @@ public class RestJobAanbod implements Serializable
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
 	private String firstName;
 	private String lastName;
 	private String skills;
@@ -29,24 +29,17 @@ public class RestJobAanbod implements Serializable
 	private String plaatje;
 	private String cv;
 
-
-
-	public RestJobAanbod(int id, String aFirstName, String aLastName, String aPlaatje, String aSkills) {
+/*	public RestJobAanbod(int id, String aFirstName, String aLastName, String aPlaatje, String aSkills) {
 		setId(id);
 			setFirstName(aFirstName);
 			setLastName(aLastName);
 			setPlaatje(aPlaatje);
 			setSkills(aSkills);
 		}
-    
+    */
 	public RestJobAanbod() {}
     
 	public String getFirstName()
-	{
-		return firstName;
-	}
-
-	public String getFirstName1(int indexRestJobAanbodObject)
 	{
 		return firstName;
 	}
@@ -94,5 +87,55 @@ public class RestJobAanbod implements Serializable
 	public void setId(int id)
 	{
 		this.id = id;
+	}
+
+	public String getOpleiding()
+	{
+		return opleiding;
+	}
+
+	public void setOpleiding(String opleiding)
+	{
+		this.opleiding = opleiding;
+	}
+
+	public String getErvaring()
+	{
+		return ervaring;
+	}
+
+	public void setErvaring(String ervaring)
+	{
+		this.ervaring = ervaring;
+	}
+
+	public String getWerkervaring()
+	{
+		return werkervaring;
+	}
+
+	public void setWerkervaring(String werkervaring)
+	{
+		this.werkervaring = werkervaring;
+	}
+
+	public String getProfiel()
+	{
+		return profiel;
+	}
+
+	public void setProfiel(String profiel)
+	{
+		this.profiel = profiel;
+	}
+
+	public String getCv()
+	{
+		return cv;
+	}
+
+	public void setCv(String cv)
+	{
+		this.cv = cv;
 	}
 }

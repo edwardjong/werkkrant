@@ -25,11 +25,60 @@
 		<p><span><b>Van Frontend Developer tot Senior Network Engineer. Nodig ze uit op gesprek!</b></span></p>
 	</div>   	
      
-	<div id="main-content-candidates">
+	<div id="main-content-candidates" contentEditable=true>
     <script src = "mainContent.js"></script> 
 	</div>  
 	
+	
+
 	<div id="footer">
+		<form id = "dataInputByForm" name = "dataInputByForm">
+ 		 <fieldset>
+   		 <legend>Information Candidate:</legend>
+   		 <table>
+	<tr>
+		<td>Firstname</td>
+		<td><input type="text" name="firstName" id="firstName"></td>
+	</tr>
+	<tr>
+		<td>Lastname</td>
+		<td><input type="text" name="lastName" id="lastName"></td>
+	</tr>
+		<tr>
+		<td>Skills</td>
+		<td><input type="text" name="skills" id="skills"></td>
+	</tr>
+		<tr>
+		<td>Opleiding</td>
+		<td><input type="text" name="opleiding" id="opleiding"></td>
+	</tr>
+		<tr>
+		<td>Kennis</td>
+		<td><input type="text" name="ervaring" id="ervaring"></td>
+	</tr>
+		<tr>
+		<td>Werkervaring</td>
+		<td><input type="text" name="werkervaring" id="werkervaring"></td>
+	</tr>
+		<tr>
+		<td>Profiel</td>
+		<td><input type="text" name="profiel" id="profiel"></td>
+	</tr>
+		<tr>
+		<td>Plaatje</td>
+		<td><input type="text" name="plaatje" id="plaatje"></td>
+	</tr>
+		<tr>
+		<td>CV</td>
+		<td><input type="text" name="cv" id="cv"></td>
+	</tr>
+</table>
+
+
+
+<input id="submit" onclick="formSubmit()" type="button" value="Submit">
+</form>
+
 		<span>Contact</span>
 	</div>
 </body>
