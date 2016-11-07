@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class RestJobAanbod implements Serializable
+public class Person implements Serializable
 {
 	
 	private static final long serialVersionUID = 1L;
@@ -29,15 +29,8 @@ public class RestJobAanbod implements Serializable
 	private String plaatje;
 	private String cv;
 
-/*	public RestJobAanbod(int id, String aFirstName, String aLastName, String aPlaatje, String aSkills) {
-		setId(id);
-			setFirstName(aFirstName);
-			setLastName(aLastName);
-			setPlaatje(aPlaatje);
-			setSkills(aSkills);
-		}
-    */
-	public RestJobAanbod() {}
+	
+	public Person() {}
     
 	public String getFirstName()
 	{

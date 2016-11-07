@@ -17,11 +17,11 @@ public class PersonService {
 	@Inject
 	private PersonDAO personDAO;
 	
-	public void addPerson(RestJobAanbod person) {
+	public void savePerson(Person person) {
 		personDAO.savePerson(person);
 	}
 	
-	public List<RestJobAanbod> getPersonList() {
+	public List<Person> getPersonList() {
 		return personDAO.getPersonList();
 	}
 }

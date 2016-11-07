@@ -3,7 +3,7 @@
 	<persistence-unit name="werkkrant">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/java8databaseDS</jta-data-source>
-	  <class>nl.java8cursus.rest.RestJobAanbod</class>
+		<class>nl.java8cursus.rest.Person</class>
   		<properties>
 			<property name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />

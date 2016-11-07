@@ -13,14 +13,14 @@ public class PersonDAO {
 	@PersistenceContext
 	public EntityManager em;
 	
-	public void savePerson(RestJobAanbod person) {
+	public void savePerson(Person person) {
 		em.persist(person);
 	}
 	
-	public List<RestJobAanbod> getPersonList()
+	public List<Person> getPersonList()
 	{
-		List<RestJobAanbod> personList = em.createQuery(
-	            "SELECT p FROM RestJobAanbod p", RestJobAanbod.class).getResultList();
+		List<Person> personList = em.createQuery(
+	            "SELECT p FROM Person p", Person.class).getResultList();
 		return personList;
 	}
 	

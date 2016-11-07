@@ -126,21 +126,16 @@
 			    if (this.readyState == 4 && this.status == 200) {
 			      var json = JSON.parse(this.responseText)
 			      var text = ""
-			      for (var i = 0; i < json.length; i++) {
-			        text += "<p>" + json[i].firstName + " " + json[i].lastName + "</p>"
-			        text += "<p>" + json[i].skills + " " + json[i].opleiding + "</p>"
-			        text += "<p>" + json[i].ervaring + " " + json[i].werkervaring + "</p>"
-			        text += "<p>" + json[i].profiel + " " + json[i].plaatje + "</p>"
-			        text += "<p>" + json[i].cv + "</p>"
+			      for (var i = 0; i < json.length; i++) 
+			      {
+			        text += "<p>" + json[i].firstName + " " + json[i].lastName + " " + json[i].skills + " " + json[i].opleiding + " " + json[i].ervaring + " " + json[i].werkervaring + " " + json[i].profiel + " " + json[i].plaatje + " " + json[i].cv + "</p>" 
 			      }
-			      document.getElementById("demo").innerHTML = text
+			      document.getElementById("footer").innerHTML = text
 			    }
 			  };
-			  xhttp.open("POST", "/werkkrant/rest/aanbod/person/", true);
+			  xhttp.open("POST", "/werkkrant/rest/aanbod/person/1", true);
 			  xhttp.setRequestHeader("Content-Type", "application/json");
-			  xhttp.send(JSON.stringify({firstName:firstName, lastName:lastName,
-			      						skills:skills, opleiding:opleiding, 
-			      						ervaring:ervaring, werkervaring:werkervaring,
-			      						profiel:profiel, plaatje:plaatje, cv:cv}));
+			  xhttp.send(JSON.stringify({firstName:firstName, lastName:lastName, skills:skills, opleiding:opleiding, ervaring:ervaring, werkervaring:werkervaring, profiel:profiel, plaatje:plaatje, cv:cv}));
+
 			 
 		}
