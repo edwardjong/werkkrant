@@ -75,6 +75,19 @@ h3 {
     left: 60%;
     top: 0%;
 } 
+
+#admin {
+	border-radius: 10px;
+    border: 2px solid #C5D937;
+    background-color: #C5D937;
+    width: 300px;
+    height: 71px; 
+    position: absolute;
+    left: 40%;
+    top: 0%;
+} 
+
+
  /*====Start search button====*/   
 #search {
 
@@ -166,6 +179,10 @@ h3 {
 
 }
 
+#admin-bar {
+	    background-color: #bebebe;
+
+}
 span
 {
     font-size:50px;

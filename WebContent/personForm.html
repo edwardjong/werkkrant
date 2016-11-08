@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+		<form id = "dataInputByForm" name = "dataInputByForm">
+		
+		 <fieldset>
+   		 <legend>Information Candidate:</legend>
+   		
+<label for="filename">Photo (max 2MB and format jpg, gif, bmp or png)</label><br>
+<input id="upload" type="file" onChange="uploadOnChange(this, 'plaatje')" /><br>
+<input id="upload" type="file" onChange="uploadOnChange(this, 'cv')" /><br>
+<!--   <input id="filename" type="text" /><br> -->
+<p></p>
+		
+ 		 <table>
+	<tr>
+		<td>Firstname</td>
+		<td><input type="text" name="firstName" id="firstName"></td>
+	</tr>
+	<tr>
+		<td>Lastname</td>
+		<td><input type="text" name="lastName" id="lastName"></td>
+	</tr>
+		<tr>
+		<td>Skills</td>
+		<td><input type="text" name="skills" id="skills"></td>
+	</tr>
+		<tr>
+		<td>Opleiding</td>
+		<td><input type="text" name="opleiding" id="opleiding"></td>
+	</tr>
+		<tr>
+		<td>Kennis</td>
+		<td><input type="text" name="ervaring" id="ervaring"></td>
+	</tr>
+		<tr>
+		<td>Werkervaring</td>
+		<td><input type="text" name="werkervaring" id="werkervaring"></td>
+	</tr>
+		<tr>
+		<td>Profiel</td>
+		<td><input type="text" name="profiel" id="profiel"></td>
+	</tr>
+		<tr>
+		<td>Plaatje</td>
+		<td><input type="text" name="plaatje" id="plaatje"></td>
+	</tr>
+		<tr>
+		<td>CV</td>
+		<td><input type="text" name="cv" id="cv"></td>
+	</tr>
+</table>
+
+
+<input id="submit" onclick="formSubmit()" type="button" value="Submit">
+</fieldset>
+</form>
+
+</body>
+</html>
