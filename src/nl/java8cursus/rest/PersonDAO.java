@@ -14,7 +14,11 @@ public class PersonDAO {
 	public EntityManager em;
 	
 	public void savePerson(Person person) {
-		em.persist(person);
+		if (person.getId() == 0) {
+			em.persist(person);
+		} else {
+			em.merge(person);
+		}
 	}
 	
 	public List<Person> getPersonList()

@@ -7,36 +7,36 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
-
 @Entity
 public class Person implements Serializable
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String firstName;
 	private String lastName;
-	private String skills;
+	private String beroep;
 	private String opleiding;
 	private String ervaring;
 	private String werkervaring;
 	private String profiel;
 	private String plaatje;
 	private String cv;
+	private Boolean active = Boolean.TRUE;
 
-	
-	public Person() {}
-    
+	public Person()
+	{
+	}
+
 	public String getFirstName()
 	{
 		return firstName;
 	}
-	
+
 	public void setFirstName(String firstName)
 	{
 		this.firstName = firstName;
@@ -62,14 +62,14 @@ public class Person implements Serializable
 		this.plaatje = plaatje;
 	}
 
-	public String getSkills()
+	public String getBeroep()
 	{
-		return skills;
+		return beroep;
 	}
 
-	public void setSkills(String skills)
+	public void setBeroep(String beroep)
 	{
-		this.skills = skills;
+		this.beroep = beroep;
 	}
 
 	public int getId()
@@ -130,5 +130,15 @@ public class Person implements Serializable
 	public void setCv(String cv)
 	{
 		this.cv = cv;
+	}
+	
+	public boolean getActive()
+	{
+		return active;
+	}
+
+	public void setActive(boolean active)
+	{
+		this.active = active;
 	}
 }

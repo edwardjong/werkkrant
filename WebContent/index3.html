@@ -9,8 +9,9 @@
 		<div class="header topmost"></div>
 		<div class="header spacing_line_thin"></div>
 		<div class="header logo">
-		
-			<img src="Images/logo-aanbodkrant.png" align="left">
+		<a href="index3.html"><img src="Images/logo-aanbodkrant.png" align="left"></a>
+			
+			
 	    	<img src="Images/logo-uwv.png" align="middle"> 
 			<img src="Images/logo-werkgevers-servicepunt4.png" align="right">
 		</div> 	
@@ -18,21 +19,32 @@
 			<form method="get" action="/search" id="search"><input name="q" type="text" size="40" placeholder="Zoeken in de Aanbodkrant..." /></form>
 		</div> 
 	</div> 
+		<div id="admin-bar">
+				<button onclick="getPersonForm()">Persoon toevoegen</button>
+	</div>
 	<div class="header spacing_line_thick"></div>	
 	<div id="main-content-text">
 		<span>Ontmoet<a> Onze ICT Professionals</a></span>
 		<p><span><b>Van Frontend Developer tot Senior Network Engineer. Nodig ze uit op gesprek!</b></span></p>
 	</div>   	
-     
+
+
+	
 	<div id="main-content-candidates">
+	
+
     <script src = "mainContent.js"></script> 
+
 	</div>  
 	
 	
-	<div id="admin-bar">
-				<button onclick="getPersonForm()">Persoon toevoegen</button>
+      	<div id ="admin-bar">
+				<button id="btnChangePerson" onclick="formSubmit(true)">Persoon Wijzigen</button>
+				<button onclick="formSubmit(false)">Persoon Verwijderen</button>
 	</div>
-	<div id="footer">		<span>Contact details</span></div>
+	<div id="footer">	
+
+		<span>Contact details</span></div>
 
 </body>
 </html>

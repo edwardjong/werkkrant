@@ -1,19 +1,18 @@
 package nl.java8cursus.rest;
 
-//import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Consumes;
-//import javax.transaction.Transactional;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
 import javax.inject.Inject;
-//import javax.persistence.EntityManager;
-//import nl.luminis.javatraining.pojo.Person;
+
 
 @Path("/aanbod")
 public class DataOphalen
@@ -48,20 +47,10 @@ public class DataOphalen
 		return null;
 	}
 
-/*	@POST
-	@Path("/person/1")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public void addPerson(Person person)
-	{
-		personService.addPerson(person);
-		System.out.println("Added a person with firstname " + person.getFirstName() + " and with lastname "
-				+ person.getLastName());
-	}*/
 	
 	@POST
-	@Path("/person/1")
+	@Path("/person")
 	@Consumes(MediaType.APPLICATION_JSON)
-//	@Transactional 
 	public void savePerson(Person person)
 	{
 		personService.savePerson(person);

@@ -9,10 +9,12 @@
 		<form id = "dataInputByForm" name = "dataInputByForm">
 		
 		 <fieldset>
-   		 <legend>Information Candidate:</legend>
+   		 <legend>Informatie Kandidaat:</legend>
    		
-<label for="filename">Photo (max 2MB and format jpg, gif, bmp or png)</label><br>
+<label for="filename">Foto (max 2MB en formaat jpg, gif, bmp of png)</label><br>
 <input id="upload" type="file" onChange="uploadOnChange(this, 'plaatje')" /><br>
+<p></p>
+<label for="filename">CV (max 1MB en formaat Word of PDF)</label><br>
 <input id="upload" type="file" onChange="uploadOnChange(this, 'cv')" /><br>
 <!--   <input id="filename" type="text" /><br> -->
 <p></p>
@@ -27,8 +29,8 @@
 		<td><input type="text" name="lastName" id="lastName"></td>
 	</tr>
 		<tr>
-		<td>Skills</td>
-		<td><input type="text" name="skills" id="skills"></td>
+		<td>Beroep</td>
+		<td><input type="text" name="beroep" id="beroep"></td>
 	</tr>
 		<tr>
 		<td>Opleiding</td>
@@ -46,18 +48,26 @@
 		<td>Profiel</td>
 		<td><input type="text" name="profiel" id="profiel"></td>
 	</tr>
-		<tr>
+		<tr hidden>
 		<td>Plaatje</td>
 		<td><input type="text" name="plaatje" id="plaatje"></td>
 	</tr>
-		<tr>
+		<tr hidden>
 		<td>CV</td>
 		<td><input type="text" name="cv" id="cv"></td>
 	</tr>
 </table>
 
 
+  	<div id ="admin-bar">
+				<button id="btnChangePerson" onclick="formSubmit(true)">Persoon Wijzigen</button>
+				<button onclick="formSubmit(false)">Persoon Verwijderen</button>
+	</div>
+	
+<input type="hidden" id="personId" value="0" />
+
 <input id="submit" onclick="formSubmit()" type="button" value="Submit">
+
 </fieldset>
 </form>
 

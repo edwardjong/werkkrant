@@ -17,7 +17,7 @@
   									text += "</a>"			
   								text += "</div>"	
   								text += "<h3><span><e>" + json[i].firstName + "  " + json[i].lastName + "</e></span></h3>"
-  								text += "<h3><span><f>"+ json[i].skills + " </f></span></h3>"	
+  								text += "<h3><span><f>"+ json[i].beroep + " </f></span></h3>"	
   							text += "</div>"		
          				}
       				document.getElementById("main-content-candidates").innerHTML = text
@@ -34,7 +34,7 @@
   			{
     			if (this.readyState == 4 && this.status == 200) 
     			{   
-					var json = JSON.parse(this.responseText)
+					var json = JSON.parse(this.responseText);
       				var text = ""
       					text += "<table id=\"table-example-1\">"
       					text += "<thead><tr><th colspan=\"3\">" + json.firstName + " " + json.lastName + "</th>"
@@ -45,13 +45,15 @@
       							text +="</div>"     		  				
       		  			text +="<th rowspan=\"2\">" + json.profiel + "</th>" 
       		  			text +="<thead><tr><th colspan=\"3\"><b>Opleidingsniveau: </b>" + json.opleiding + "</th>"
-      		  			text +="<thead><tr><th colspan=\"3\"><b>Kennis en ervaring: </b>" + json.ervaring + "</th>"     		  	    		  	
-      		  			text +="<thead><tr><th colspan=\"3\"><b>Recente Werkervaring: </b>" + json.werkervaring + "</th>"
+      		  			text +="<thead><tr><th colspan=\"3\"><b>Kennis: </b>" + json.ervaring + "</th>"     		  	    		  	
+      		  			text +="<thead><tr><th colspan=\"3\"><b>Werkervaring: </b>" + json.werkervaring + "</th>"
       		  			text +="<thead><tr><th colspan=\"3\"><b>CV: </b><a href=\"CV/Yvonne2.pdf\">download pdf</a></th>"
       		  			text += "</tr></thead>"
       		  		    text +="</tr></tbody></table>"
 	
       				document.getElementById("main-content-candidates").innerHTML = text
+      				document.getElementById("btnChangePerson").setAttribute( "onClick", "formFillPerson(" + json.id + ")");
+      				
     			}
   			};
   			xhttp.open("GET", "/werkkrant/rest/aanbod/person/"+id, true);
@@ -59,52 +61,76 @@
 			
 		} 
 		
-/*
- * function changePerson(id) { var xhttp = new XMLHttpRequest();
- * xhttp.onreadystatechange = function() { if (this.readyState == 4 &&
- * this.status == 200) { var json = JSON.parse(this.responseText) var text = ""
- * text += "<table id=\"table-example-2\" style=\"width:75%\">" text += "<tr>"
- * text += "<td>" + "Voornaam" + "</td>" text += "<td>" + json.firstName + "</td>"
- * text += "</tr>" text += "<tr>" text += "<td>" + "Achternaam" + "</td>"
- * text += "<td>" + json.lastName + "</td>" text += "</tr>" text += "<tr>"
- * text += "<td>" + "Vaardigheden" + "</td>" text += "<td>" + json.skills + "</td>"
- * text += "</tr>" text += "<tr>" text += "<td>" + "Opleiding" + "</td>"
- * text += "<td>" + json.opleiding + "</td>" text += "</tr>" text += "<td>" +
- * "Ervaring" + "</td>" text += "<td>" + json.ervaring + "</td>" text += "</tr>"
- * text += "<td>" + "Werkervaring" + "</td>" text += "<td>" +
- * json.werkervaring + "</td>" text += "</tr>" text += "<td>" + "Profiel" + "</td>"
- * text += "<td>" + json.profiel + "</td>" text += "</tr>" text += "<td>" +
- * "Plaatje" + "</td>" text += "<td>" + json.plaatje + "</td>" text += "</tr>"
- * text += "<td>" + "CV" + "</td>" text += "<td>" + json.cv + "</td>"
- * text += "</tr>" text +="</table>"
- * 
- * document.getElementById("main-content-candidates").innerHTML = text } };
- * xhttp.open("GET", "/werkkrant/rest/aanbod/person/"+id, true); xhttp.send();
- *  }
- */
+		function formFillPerson(id) 
+		{
+	  			var html = new XMLHttpRequest();
+	  			html.open("get", "/werkkrant/personForm.html", true);
+	  			html.onreadystatechange = function() 
+	  			{
+	    			if (this.readyState == 4 && this.status == 200) 
+	    			{
+	    				document.getElementById("main-content-candidates").innerHTML = this.responseText;
+	    				var xhttp = new XMLHttpRequest();
+	    	  			xhttp.onreadystatechange = function() 
+	    	  			{
+	    	    			if (this.readyState == 4 && this.status == 200) 
+	    	    			{   
+	    	    				var person = JSON.parse(this.responseText);
+	    	    				document.getElementById("personId").value = id;
+	    	    				document.getElementById("firstName").value = person.firstName;
+	    	    				document.getElementById("lastName").value = person.lastName;
+	    	    				document.getElementById("beroep").value = person.beroep;
+	    	    				document.getElementById("opleiding").value = person.opleiding;
+	    	    				document.getElementById("ervaring").value = person.ervaring;	
+	    	    				document.getElementById("werkervaring").value = person.werkervaring;			  
+	    	    				document.getElementById("profiel").value = person.profiel;			  
+	    	    				document.getElementById("plaatje").value = person.plaatje;
+	    	    				document.getElementById("cv").value = person.cv;
+	    	    		//		document.getElementById("active").value = true;
+	    	    			}
+	    	  			};
+	    	  			xhttp.open("GET", "/werkkrant/rest/aanbod/person/"+id, true);
+	    	  			xhttp.send();   				
+	    			}
+	  			}
+	  			html.send();
+		}
 		
-		function formSubmit() {
+
+		function formSubmit(active) {
 			  var firstName = document.getElementById("firstName").value;
 			  var lastName = document.getElementById("lastName").value;
-			  var skills = document.getElementById("skills").value;
+			  var beroep = document.getElementById("beroep").value;
 			  var opleiding = document.getElementById("opleiding").value;
 			  var ervaring = document.getElementById("ervaring").value;	
 			  var werkervaring = document.getElementById("werkervaring").value;			  
 			  var profiel = document.getElementById("profiel").value;			  
 			  var plaatje = document.getElementById("plaatje").value;
 			  var cv = document.getElementById("cv").value;
+			  var personId = document.getElementById("personId").value;
 
 			  
 			  var xhttp = new XMLHttpRequest();
 			  xhttp.onreadystatechange = function() {
 			    if (this.readyState == 4 && this.status == 204) {
-			      
-			      document.getElementById("main-content-candidates").innerHTML ="Persoon toegevoegd"
+				    if (active == true ) 
+				    {			      
+				    	document.getElementById("main-content-candidates").innerHTML ="Persoon gewijzigd"
+				    }		
+				    else if (active == false) 
+				    {
+				    	document.getElementById("main-content-candidates").innerHTML ="Persoon verwijderd" 		
+				    }
+				    else
+				    {
+				    	document.getElementById("main-content-candidates").innerHTML ="Fout!" 		
+				    }			
+				    System.out.println("Active is= " + active);
 			    }
 			  };
-			  xhttp.open("POST", "/werkkrant/rest/aanbod/person/1", true);
+			  xhttp.open("POST", "/werkkrant/rest/aanbod/person", true);
 			  xhttp.setRequestHeader("Content-Type", "application/json");
-			  xhttp.send(JSON.stringify({firstName:firstName, lastName:lastName, skills:skills, opleiding:opleiding, ervaring:ervaring, werkervaring:werkervaring, profiel:profiel, plaatje:plaatje, cv:cv}));
+			  xhttp.send(JSON.stringify({id:personId ,firstName:firstName, lastName:lastName, beroep:beroep, opleiding:opleiding, ervaring:ervaring, werkervaring:werkervaring, profiel:profiel, plaatje:plaatje, cv:cv, active:active}));
 
 			 
 		}
