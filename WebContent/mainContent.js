@@ -39,10 +39,10 @@
       					text += "<table id=\"table-example-1\">"
       					text += "<thead><tr><th colspan=\"3\">" + json.firstName + " " + json.lastName + "</th>"
       					text += "</tr><tr><th>"
-      							text +=  "<div class=\"image-holder position-img\">"	
-      							text += "<img src=\""  +  json.plaatje + "\">" 
-      							text += "</a>"
-      							text +="</div>"     		  				
+      					text +=  "<div class=\"image-holder position-img\">"	
+      					text += "<img src=\""  +  json.plaatje + "\">" 
+      					text += "</a>"
+      					text +="</div>"     		  				
       		  			text +="<th rowspan=\"2\">" + json.profiel + "</th>" 
       		  			text +="<thead><tr><th colspan=\"3\"><b>Opleidingsniveau: </b>" + json.opleiding + "</th>"
       		  			text +="<thead><tr><th colspan=\"3\"><b>Kennis: </b>" + json.ervaring + "</th>"     		  	    		  	
@@ -52,8 +52,11 @@
       		  		    text +="</tr></tbody></table>"
       		  		    	
       		  	      	text += "<div id =\"admin-bar\">"
-      					text += "<button id=\"btnChangePerson\" onclick=\"formSubmit(true)\">Persoon Wijzigen</button>"
-          				text += "<button id=\"btnDeletePerson\" onclick=\"retirePerson("+json.id+")\">Persoon Verwijderen!!!</button>"
+      				//	text += "<button id=\"btnChangePerson\" onclick=\"formSubmit()\">Persoon Wijzigen</button>"
+      		  	    //  text += "<button id=\"btnChangePerson\" onclick=\"formFillPerson()\">Persoon Wijzigen</button>"      		  	      		
+          			//	text += "<button id=\"btnDeletePerson\" onclick=\"retirePerson("+json.id+")\">Persoon Verwijderen!!!</button>"
+      		  	      	text += "<button id=\"btnChangePerson\">Persoon Wijzigen</button>"      		  	      		
+              			text += "<button id=\"btnDeletePerson\">Persoon Verwijderen</button>"          				
       					text += "</div>"
       					
 	
@@ -119,9 +122,11 @@
 			  
 			  var xhttp = new XMLHttpRequest();
 			  xhttp.onreadystatechange = function() {
-			    if (this.readyState == 4 && this.status == 204) {
-
-				    	document.getElementById("main-content-candidates").innerHTML ="Persoon toegevoegd" 		
+			    if (this.readyState == 4 && this.status == 204) {			    	
+			    	if (personId != "0")
+				    	{document.getElementById("main-content-candidates").innerHTML ="Persoon gewijzigd"}
+			    	else
+			    	{document.getElementById("main-content-candidates").innerHTML ="Persoon toegevoegd"}
 
 			    }
 			  };
@@ -131,6 +136,8 @@
 
 			 
 		}
+		
+
 		
 		function getPersonForm() 
 		{
