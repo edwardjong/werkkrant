@@ -53,8 +53,30 @@ public class DataOphalen
 	@Produces(MediaType.APPLICATION_JSON)
 	public Person deletePerson(@PathParam("id") int id)
 	{
-		personService.removePerson(person);
+		List<Person> personList = personService.getPersonList();
+		for (Person onePerson : personList)
+		{
+			if (onePerson.getId() == id)
+			{
+				personService.removePerson(onePerson);
+				
+				System.out.println("Deleted a person with firstname " + onePerson.getFirstName() + " and with lastname "
+						+ onePerson.getLastName());
+			}
+		}
+		return null;
 	}
+	
+/*	@DELETE
+	@Path("/person/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Person deletePerson(@PathParam("id") int id)
+	{
+		personService.removePerson(person);
+		
+		System.out.println("Deleted a person with firstname " + person.getFirstName() + " and with lastname "
+				+ person.getLastName());
+	} */
 	
 	@POST
 	@Path("/person")
@@ -62,6 +84,7 @@ public class DataOphalen
 	public void savePerson(Person person)
 	{
 		personService.savePerson(person);
+		
 		System.out.println("Added a person with firstname " + person.getFirstName() + " and with lastname "
 				+ person.getLastName());
 	}

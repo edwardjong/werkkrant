@@ -53,13 +53,13 @@
       		  		    	
       		  	      	text += "<div id =\"admin-bar\">"
       					text += "<button id=\"btnChangePerson\" onclick=\"formSubmit(true)\">Persoon Wijzigen</button>"
-          				text += "<button id=\"btnDeletePerson\" onclick=\"formSubmit(false)\">Persoon Verwijderen</button>"
+          				text += "<button id=\"btnDeletePerson\" onclick=\"retirePerson("+json.id+")\">Persoon Verwijderen!!!</button>"
       					text += "</div>"
       					
 	
       				document.getElementById("main-content-candidates").innerHTML = text
       				document.getElementById("btnChangePerson").setAttribute( "onClick", "formFillPerson(" + json.id + ")");
-      				document.getElementById("btnDeletePerson").setAttribute( "onClick", "formFillPerson(" + json.id + ")");
+      				document.getElementById("btnDeletePerson").setAttribute( "onClick", "retirePerson(" + json.id + ")");
       				
     			}
   			};
@@ -93,7 +93,6 @@
 	    	    				document.getElementById("profiel").value = person.profiel;			  
 	    	    				document.getElementById("plaatje").value = person.plaatje;
 	    	    				document.getElementById("cv").value = person.cv;
-	    	    		//		document.getElementById("active").value = true;
 	    	    			}
 	    	  			};
 	    	  			xhttp.open("GET", "/werkkrant/rest/aanbod/person/"+id, true);
@@ -104,7 +103,8 @@
 		}
 		
 
-		function formSubmit(active) {
+		function formSubmit() 
+		{
 			  var firstName = document.getElementById("firstName").value;
 			  var lastName = document.getElementById("lastName").value;
 			  var beroep = document.getElementById("beroep").value;
@@ -120,24 +120,14 @@
 			  var xhttp = new XMLHttpRequest();
 			  xhttp.onreadystatechange = function() {
 			    if (this.readyState == 4 && this.status == 204) {
-				    if (active == true ) 
-				    {			      
-				    	document.getElementById("main-content-candidates").innerHTML ="Persoon gewijzigd"
-				    }		
-				    else if (active == false) 
-				    {
-				    	document.getElementById("main-content-candidates").innerHTML ="Persoon verwijderd" 		
-				    }
-				    else
-				    {
-				    	document.getElementById("main-content-candidates").innerHTML ="Fout!" 		
-				    }			
-				    System.out.println("Active is= " + active);
+
+				    	document.getElementById("main-content-candidates").innerHTML ="Persoon toegevoegd" 		
+
 			    }
 			  };
 			  xhttp.open("POST", "/werkkrant/rest/aanbod/person", true);
 			  xhttp.setRequestHeader("Content-Type", "application/json");
-			  xhttp.send(JSON.stringify({id:personId ,firstName:firstName, lastName:lastName, beroep:beroep, opleiding:opleiding, ervaring:ervaring, werkervaring:werkervaring, profiel:profiel, plaatje:plaatje, cv:cv, active:active}));
+			  xhttp.send(JSON.stringify({id:personId ,firstName:firstName, lastName:lastName, beroep:beroep, opleiding:opleiding, ervaring:ervaring, werkervaring:werkervaring, profiel:profiel, plaatje:plaatje, cv:cv}));
 
 			 
 		}
@@ -163,15 +153,15 @@
 		}
 		
 		
-		function removePerson(id)
+		function retirePerson(id)
 		{
   			var xhttp = new XMLHttpRequest();
   			xhttp.onreadystatechange = function() 
   			{
-    			if (this.readyState == 4 && this.status == 200) 
+    			if (this.readyState == 4 && this.status == 204) 
     			{   
 
-      				
+  			      document.getElementById("main-content-candidates").innerHTML = "Persoon verwijderd"
     			}
   			};
   			xhttp.open("DELETE", "/werkkrant/rest/aanbod/person/"+id, true);

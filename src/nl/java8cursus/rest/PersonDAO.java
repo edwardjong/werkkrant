@@ -24,7 +24,7 @@ public class PersonDAO {
 	public List<Person> getPersonList()
 	{
 		List<Person> personList = em.createQuery(
-	            "SELECT p FROM Person p", Person.class).getResultList();
+	            "SELECT p FROM Person p where p.active = true", Person.class).getResultList();
 		return personList;
 	}
 	
