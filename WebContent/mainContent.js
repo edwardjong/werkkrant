@@ -50,9 +50,16 @@
       		  			text +="<thead><tr><th colspan=\"3\"><b>CV: </b><a href=\"CV/Yvonne2.pdf\">download pdf</a></th>"
       		  			text += "</tr></thead>"
       		  		    text +="</tr></tbody></table>"
+      		  		    	
+      		  	      	text += "<div id =\"admin-bar\">"
+      					text += "<button id=\"btnChangePerson\" onclick=\"formSubmit(true)\">Persoon Wijzigen</button>"
+          				text += "<button id=\"btnDeletePerson\" onclick=\"formSubmit(false)\">Persoon Verwijderen</button>"
+      					text += "</div>"
+      					
 	
       				document.getElementById("main-content-candidates").innerHTML = text
       				document.getElementById("btnChangePerson").setAttribute( "onClick", "formFillPerson(" + json.id + ")");
+      				document.getElementById("btnDeletePerson").setAttribute( "onClick", "formFillPerson(" + json.id + ")");
       				
     			}
   			};
@@ -154,3 +161,20 @@
 		    }
 		    document.getElementById(divName).value = "Images/" + filename;
 		}
+		
+		
+		function removePerson(id)
+		{
+  			var xhttp = new XMLHttpRequest();
+  			xhttp.onreadystatechange = function() 
+  			{
+    			if (this.readyState == 4 && this.status == 200) 
+    			{   
+
+      				
+    			}
+  			};
+  			xhttp.open("DELETE", "/werkkrant/rest/aanbod/person/"+id, true);
+  			xhttp.send();
+			
+		} 

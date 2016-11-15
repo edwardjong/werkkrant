@@ -22,4 +22,9 @@ public class PersonService {
 	public List<Person> getPersonList() {
 		return personDAO.getPersonList();
 	}
+	
+	public void removePerson(Person person) {
+		person.setActive(false);
+		personDAO.savePerson(person);
+	}
 }
